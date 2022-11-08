@@ -1,9 +1,11 @@
-const { mooncakeSays } = require('./');
+function mooncakeSays(message) {
+  let mooncake = '(O.o)';
 
-test('mooncake knows what to say', () => {
-  expect(mooncakeSays('woooahhh!')).toBe('(o.o) woooahhh!');
-});
+  if ( !message ) {
+    return `${mooncake} chookity?`;
+  }
 
-test('mooncake is not sure what to say', () => {
-  expect(mooncakeSays()).toBe('(o.o) chookity?');
-});
+  return `${mooncake} ${message}!`;
+}
+
+module.exports.mooncakeSays = mooncakeSays;
